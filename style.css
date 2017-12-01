@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+h1 {
+  font-family: 'Source sans pro', sans-serif;
+  font-weight: 900;
+}
+
+.navbar-brand img {
+  height: auto;
+  width: 75px;
+  margin: -20px 0 0 0;
+}
+
+/*black nav*/
+.nav-blk {
+  color: #000;
+}
+
+/* Non-Bootstrap Navbar */
+#nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.nav-brand img {
+  height: auto;
+  width: 75px;
+  float: left;
+  margin-left: 20px;
+}
+
+.nav-links {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li {
+  display: inline-block;
+}
+
+.nav-links ul li:first-child {
+  padding: 10px 0;
+}
+
+.nav-links ul li a {
+  position: relative;
+  color: #000;
+  margin: 0 15px;
+}
+
+.nav-links ul li a:hover {
+  text-decoration: none;
+}
+
+.nav-links ul li .nav-links-a::after {
+  content: "";
+  background: #000;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  transition: width 200ms ease;
+}
+
+.nav-links ul li .nav-links-a:hover::after,
+.nav-links ul li .nav-links-a:focus::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links ul li .nav-white-a {
+  color: #fff;
+}
+
+.nav-links ul li .nav-white-a::after {
+  background: #fff;
+}
+
+.nav-burger {
+    float: right;
+    display: none;
+    margin: 15px 0 0 0;
+}
+
+.nav-black-bg {
+  background: #000;
+}
+
+.nav-black-a {
+  color: #fff;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media (max-width: 768px) {
+  .nav-burger {
+    position: relative;
+    z-index: 999;
+    margin-right: 30px;
+    display: block;
+  }
+
+  .nav-burger a {
+    color: #000;
+    font-size: 25px;
+    transition: all 250ms ease-in-out;
+  }
+
+  .nav-burger a:hover,
+  .nav-burger a:focus {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .nav-burger a.change {
+    color: #000;
+  }
+
+  .nav-burger .nav-white-icon {
+    color: #fff;
+  }
+
+  .nav-burger .nav-white-icon:hover,
+  .nav-burger .nav-white-icon:focus {
+    color: #fff;
+  }
+
+  .nav-burger .nav-white-icon.change {
+    color: #000;
+  }
+
+  .nav-links {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0 -100% 0 0;
+    float: none;
+    transition: all 350ms ease-in-out;
+  }
+
+  .nav-links ul li {
+    display: block;
+    margin: 10px 0 0 0;
+    padding: 10px;
+  }
+
+  .nav-links ul li .nav-links-a {
+    color: #000;
+    font-size: 20px;
+  }
+
+  .nav-links ul li .nav-social {
+    color: #000;
+    margin: 0 5px 0 15px;
+  }
+
+  .nav-links ul li .nav-links-a::after {
+    background: #000;
+  }
+
+  .nav-links.shift {
+    margin: 0;
+  }
+
+  .nav-links ul .nav-li-social {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 767px) {
+  .dropdown-content {
+    background: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 0 50px 0 0;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  .nav-li-links:hover .dropdown-content {
+      display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-content {
+    background: none;
+    box-shadow: none;
+    padding: 0 0 0 50px;
+    position: static;
+  }
+
+  .dropdown-content:after {
+    display: none;
+  }
+
+  .dropdown-content ul li {
+    padding: 0;
+  }
+
+  .dropdown-content ul li:first-child,
+  .dropdown-content ul li:last-child {
+    padding: 0;
+  }
+
+  .dropdown-content ul li a {
+    font-size: 18px;
+  }
+}
+
+.dropdown-content:after {
+  position: absolute;
+  top: -6px;
+  left: 40px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #f9f9f9;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.dropdown-content-black:after {
+  position: absolute;
+  top: -6px;
+  left: 40px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #000;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.dropdown-content ul li {
+  display: block;
+  padding: 5px 0;
+}
+
+.dropdown-content ul li:first-child {
+  padding: 15px 0 0 0;
+}
+
+.dropdown-content ul li:last-child {
+  padding: 0 0 15px 0;
+}
+
+.dropdown-content ul li a::after {
+  content: "";
+  background: #000;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  transition: width 200ms ease;
+}
+
+.dropdown-content ul li a:hover::after,
+.dropdown-content ul li a:focus::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+  .dropdown-content-black {
+    background: none;
+    box-shadow: none;
+    padding: 0 0 0 50px;
+    position: static;
+  }
+
+  .dropdown-content-black:after {
+    display: none;
+  }
+
+  .dropdown-content-black ul li {
+    padding: 0;
+  }
+
+  .dropdown-content-black ul li:first-child,
+  .dropdown-content-black ul li:last-child {
+    padding: 0;
+  }
+
+  .dropdown-content-black ul li a {
+    font-size: 18px;
+  }
+}
+
+.dropdown-content-black:after {
+  position: absolute;
+  top: -6px;
+  left: 40px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #000;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+.dropdown-content-black ul li {
+  display: block;
+  padding: 5px 0;
+}
+
+.dropdown-content-black ul li:first-child {
+  padding: 15px 0 0 0;
+}
+
+.dropdown-content-black ul li:last-child {
+  padding: 0 0 15px 0;
+}
+
+.dropdown-content-black ul li a {
+  color: #000;
+}
+
+.dropdown-content-black ul li a::after {
+  content: "";
+  background: #000;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  transition: width 200ms ease;
+}
+
+.dropdown-content-black ul li a:hover::after,
+.dropdown-content-black ul li a:focus::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (min-width: 767px) {
+  .dropdown-content-black {
+    background: #000;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 0 50px 0 0;
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  .nav-li-links:hover .dropdown-content-black {
+      display: block;
+  }
+
+  .dropdown-content-black ul li a {
+    color: #fff ;
+  }
+
+  .dropdown-content-black ul li a::after {
+    content: "";
+    background: #fff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 0;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    transition: width 200ms ease;
+  }
+}
+
+/*
+essential styles:
+these make the slideshow work
+*/
+#slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    background-size: cover;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+.slide {
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+}
+
+.slide:nth-of-type(1) {
+    background-image: url('img/street/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-of-type(2) {
+    background-image: url('img/pic6.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-of-type(3) {
+    background-image: url('img/landscape/4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-of-type(4) {
+    background-image: url('img/street/5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-of-type(5) {
+    background-image: url('img/pic4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/*new gallery layout*/
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 8em 0 0 0;
+}
+
+.gallery-item {
+  opacity: 0;
+  margin: 10px;
+}
+
+.gallery-item img {
+  height: auto;
+  width: 375px;
+}
+
+.gallery-item img:hover {
+  opacity: .8;
+}
+
+/*About page display*/
+#about-banner {
+  padding: 16em 0;
+  background-image: url('img/xavier.jpg');
+  background-size: cover;
+  background-position: center 65%;
+}
+
+#about-xavier {
+  text-align: center;
+}
+
+#about-xavier h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  margin: 2em 0 0 0;
+}
+
+#about-xavier h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 1em 0;
+}
+
+/* Mess with max/min and number of pixels in school */
+@media (max-width: 1080px) {
+  #about-banner {
+    padding: 18em 0;
+    background-position: center 50%;
+  }
+}
+
+/*story text alignment*/
+.story {
+  width: 75%;
+  border-bottom-width: 1px;
+  border-bottom-color: #000;
+  border-bottom-style: solid;
+  margin: 0 auto 4em;
+}
+
+.story p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Contact form layout */
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=text]:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  transition: 500ms ease;
+}
+
+textarea:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  transition: 500ms ease;
+}
+
+input[type=submit] {
+    background-color: #000000;
+    color: white;
+    margin: 2em 0 0 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #282828;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-basis: 1 1 auto;
+  margin: 0 2em;
+}
+
+.contact-margin {
+  margin: 8em auto;
+}
+
+.contact-margin h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+
+.contact-margin p,
+.contact-margin form label {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .flex-form {
+    padding: 4em 0 0 0;
+ }
+}
+
+li a .fa {
+  font-size: 20px;
+}
+
+li a .fa::after {
+  content: "";
+  background: none;
+  box-shadow: 0;
+  display: block;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  right: 0;
+  transition: width 200ms ease;
+}
+
+li a .fa:hover::after {
+    width: 0;
+    left: 0;
+}
+
+/*
+Animations
+*/
+/**
+ * Fade content
+ */
+@keyframes fadeOut {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+.gallery-item:nth-child(1) {
+  animation: fadeOut 300ms ease 200ms forwards;
+}
+
+.gallery-item:nth-child(2) {
+  animation: fadeOut 300ms ease 300ms forwards;
+}
+
+.gallery-item:nth-child(3) {
+  animation: fadeOut 300ms ease 400ms forwards;
+}
+
+.gallery-item:nth-child(4) {
+  animation: fadeOut 300ms ease 500ms forwards;
+}
+
+.gallery-item:nth-child(5) {
+  animation: fadeOut 300ms ease 600ms forwards;
+}
+
+.gallery-item:nth-child(6) {
+  animation: fadeOut 300ms ease 700ms forwards;
+}
+
+.gallery-item:nth-child(7) {
+  animation: fadeOut 300ms ease 800ms forwards;
+}
+
+.gallery-item:nth-child(8) {
+  animation: fadeOut 300ms ease 900ms forwards;
+}
+
+.gallery-item:nth-child(9) {
+  animation: fadeOut 300ms ease 1000ms forwards;
+}
+
+.gallery-item:nth-child(10) {
+  animation: fadeOut 300ms ease 1100ms forwards;
+}
+
+.gallery-item:nth-child(11) {
+  animation: fadeOut 300ms ease 1200ms forwards;
+}
+
+.gallery-item:nth-child(12) {
+  animation: fadeOut 300ms ease 1300ms forwards;
+}
